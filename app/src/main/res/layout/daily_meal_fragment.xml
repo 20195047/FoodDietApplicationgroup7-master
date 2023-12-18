@@ -4,10 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgrounddd"
     tools:context=".ui.gallery.DailyMealFragment">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Exercise"/>
+        android:id="@+id/exerciseTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DAILY EXERCISE"
+        android:fontFamily="@font/alfa_slab_one"
+        android:textSize="35sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"/>
+
+    <pl.droidsonroids.gif.GifImageButton
+        android:id="@+id/running"
+        android:layout_width="310dp"
+        android:layout_height="170dp"
+        android:background="@drawable/a_run_in_place"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exerciseTitle"
+        android:layout_marginTop="30dp"/>
+
+    <pl.droidsonroids.gif.GifImageButton
+        android:id="@+id/pushUp"
+        android:layout_width="310dp"
+        android:layout_height="170dp"
+        android:background="@drawable/a_push_ups"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/running"
+        android:layout_marginTop="20dp"/>
+
+    <pl.droidsonroids.gif.GifImageButton
+        android:id="@+id/jumpingJacks"
+        android:layout_width="310dp"
+        android:layout_height="170dp"
+        android:background="@drawable/a_jumping_jacks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pushUp"
+        android:layout_marginTop="20dp"/>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
