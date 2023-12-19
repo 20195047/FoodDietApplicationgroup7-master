@@ -29,6 +29,9 @@
         <activity
             android:name=".activities.AuthenticationManager"
             android:exported="false" />
+        <activity
+            android:name=".activities.DailyMealFragment"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

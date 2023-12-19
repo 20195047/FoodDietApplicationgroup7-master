@@ -20,9 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.health.fooddietapplication.R;
 import com.health.fooddietapplication.ui.MealsFragment;
-import com.health.fooddietapplication.ui.gallery.DailyMealFragment;
 import com.health.fooddietapplication.ui.home.HomeFragment;
-import com.health.fooddietapplication.ui.slideshow.FavouriteFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -73,13 +71,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_home:
                 break;
             case R.id.nav_daily_meal:
-                getSupportFragmentManager().beginTransaction().replace(R.id.app_bar_main, new DailyMealFragment()).commit();
+                Intent intent = new Intent(MainActivity.this, DailyMealFragment.class);
+                startActivity(intent);
                 break;
             case R.id.nav_favourite:
-                getSupportFragmentManager().beginTransaction().replace(R.id.app_bar_main, new FavouriteFragment()).commit();
+                Intent intentFav = new Intent(MainActivity.this, FavouriteFragment.class);
+                startActivity(intentFav);
                 break;
             case R.id.nav_meals:
-                getSupportFragmentManager().beginTransaction().replace(R.id.app_bar_main, new MealsFragment()).commit();
+                Intent intentMeal = new Intent(MainActivity.this, MealFragment.class);
+                startActivity(intentMeal);
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
