@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Menu;
+import android.widget.ListView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -17,15 +18,22 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.health.fooddietapplication.R;
+import com.health.fooddietapplication.adapters.HomeHorAdapter;
+import com.health.fooddietapplication.models.HomeHorModel;
 import com.health.fooddietapplication.ui.MealsFragment;
 import com.health.fooddietapplication.ui.home.HomeFragment;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private AppBarConfiguration mAppBarConfiguration;
     private DrawerLayout drawerLayout;
+    private HomeHorAdapter adapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +45,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout=findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+        navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        recyclerView =findViewById(R.id.home_hor_rec);
+        adapter = new HomeHorAdapter(this, new ArrayList<HomeHorModel>());
+        recyclerView.setAdapter(adapter);
 
         navigationView.setCheckedItem(R.id.nav_home);
     }

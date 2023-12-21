@@ -8,12 +8,6 @@
     android:background="@drawable/backgrounddd"
     tools:context=".activities.DailyMealFragment">
 
-
-
-
-
-
-
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
